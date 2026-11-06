@@ -21,9 +21,9 @@ describe("users", () => {
     expect(getUser("u1").lastLogin).toBe(0);
   });
 
-  it("records the login time in seconds", () => {
+  it("records the login time in milliseconds", () => {
     createUser("u1", "Ada");
     recordLogin("u1", T0);
-    expect(getUser("u1").lastLogin).toBe(T0.getTime() / 1000);
+    expect(getUser("u1").lastLogin).toBe(T0.getTime());
   });
 });

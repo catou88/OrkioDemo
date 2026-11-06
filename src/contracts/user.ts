@@ -13,6 +13,6 @@
 export interface User {
   id: string;
   name: string;
-  /** Time of the last login, in seconds since the Unix epoch. 0 means never logged in. */
+  /** Time of the last login, in milliseconds since the Unix epoch. 0 means never logged in. */
   lastLogin: number;
 }
