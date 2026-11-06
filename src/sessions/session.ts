@@ -13,6 +13,6 @@ import type { User } from "../contracts/user";
 export const SESSION_TIMEOUT_SECONDS = 30 * 60;
 
 export function isSessionExpired(user: User, now: Date): boolean {
-  const nowSeconds = now.getTime() / 1000;
-  return nowSeconds - user.lastLogin > SESSION_TIMEOUT_SECONDS;
+  // lastLogin is in milliseconds since the Unix epoch.
+  return now.getTime() - user.lastLogin > SESSION_TIMEOUT_SECONDS * 1000;
 }

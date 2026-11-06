@@ -21,7 +21,7 @@ export function createUser(id: string, name: string): User {
 export function recordLogin(id: string, at: Date): void {
   const user = users.get(id);
   if (!user) throw new Error(`No user with id ${id}`);
-  user.lastLogin = Math.floor(at.getTime() / 1000);
+  user.lastLogin = at.getTime();
 }
 
 export function getUser(id: string): User {
